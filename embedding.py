@@ -38,7 +38,7 @@ def mean_pooling(model_output, attention_mask):
 
 # In[6]:
 
-
+# S-ELECTRA 형태로 한국어 문장들로 사전 학습된 모델 
 tokenizer = AutoTokenizer.from_pretrained('ddobokki/electra-small-nli-sts')
 model = AutoModel.from_pretrained('ddobokki/electra-small-nli-sts') 
 
@@ -94,7 +94,7 @@ def embedd_sentences(sentences):
 # In[63]:
 
 
-for index, row in df_2.iterrows():
+for index, row in df.iterrows():
   df_embeddings.loc[index] = [row['isbn'],row['title'],embedd_sentences([row['title'],row['main_keywords']])]
   if index % 20000 == 0:
     print(str(index) + "...")
