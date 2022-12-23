@@ -5,7 +5,8 @@
 import sys
 
 #get_ipython().system('pip install -U sentence-transformers')
-
+import sys
+get_ipython().system('pip install -U sentence-transformers')
 
 # In[2]:
 
